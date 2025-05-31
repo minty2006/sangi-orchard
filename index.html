@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangi Orchards - Premium Mango Farm</title>
+  <meta name="description" content="Farm-fresh premium mangoes from South Punjab. Order Sindhri, Chaunsa, Dussehri, Chitta Chaunsa, and Kala Chaunsa mangoes directly from our orchards.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6B8E23;   /* Olive green */
+      --secondary: #F5F5DC; /* Beige */
+      --dark: #556B2F;      /* Dark olive green */
+      --light: #FAF9F6;     /* Off-white */
+      --accent: #DAA520;    /* Goldenrod */
+      --whatsapp: #25D366;  /* WhatsApp green */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--secondary);
+    }
+    
+    /* LOGO HEADER */
+    .logo-header {
+      background: var(--light);
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    
+    .logo-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+    
+    .logo-img {
+      height: 120px;
+      width: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* MAIN HEADER */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/orchard-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 5px solid var(--accent);
+    }
+    
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    
+    /* PRODUCTS */
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    
+    .product {
+      background: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--accent);
+    }
+    
+    .product-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product h3 {
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin: 0.8rem 0;
+    }
+    
+    .product p {
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    
+    .whatsapp-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--whatsapp);
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .whatsapp-button:hover {
+      background-color: #128C7E;
+    }
+    
+    /* SEASONAL BANNER */
+    .season-banner {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .season-banner h2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* CONTACT INFO */
+    .contact-info {
+      background: var(--light);
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .contact-info h2 {
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-info p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .contact-info a {
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+    
+    /* FOOTER */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    
+    footer a:hover {
+      opacity: 0.8;
+    }
+    
+    .social-links {
+      margin: 1rem 0;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .logo-img {
+        height: 100px;
+        width: 100px;
+      }
+      
+      .products-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGO HEADER -->
+  <div class="logo-header">
+    <img src="images/logo-sangiorchards.jpg" alt="Sangi Orchards Logo" class="logo-img">
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header>
+    <h1>Premium Mangoes from South Punjab</h1>
+    <p>Farm-fresh mangoes harvested at peak perfection from our family orchards in Khanbela Jalalpur Pirwala</p>
+  </header>
+
+  <!-- SEASONAL BANNER -->
+  <div class="season-banner">
+    <h2>✨ Mango Season Now Open! ✨</h2>
+    <p>Fresh harvest available from May to August. Order now for the best quality!</p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products-container">
+    <!-- Sindhri -->
+    <div class="product">
+      <img src="images/sindhri.jpg" alt="Sindhri Mango">
+      <div class="product-content">
+        <h3>Sindhri</h3>
+        <p class="price">Rs. 280/kg</p>
+        <p>The "Queen of Mangoes" from Sindh region, known for its distinctive elongated shape, golden-yellow skin, and exceptionally sweet, fiberless flesh. Perfect for desserts and fresh eating.</p>
+        <a href="https://wa.me/9233177739774?text=I%20want%20to%20order%20Sindhri%20mangoes" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Chaunsa No. 12 -->
+    <div class="product">
+      <img src="images/chaunsa12.jpg" alt="Chaunsa No. 12 Mango">
+      <div class="product-content">
+        <h3>Chaunsa No. 12</h3>
+        <p class="price">Rs. 300/kg</p>
+        <p>The premium mid-season variety with perfect sugar-acid balance. Known for its rich aroma, smooth texture, and juicy pulp. Excellent for mango lassi and milkshakes.</p>
+        <a href="https://wa.me/9233177739774?text=I%20want%20to%20order%20Chaunsa%20No%2012%20mangoes" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Dussehri -->
+    <div class="product">
+      <img src="images/dussehri.jpg" alt="Dussehri Mango">
+      <div class="product-content">
+        <h3>Dussehri</h3>
+        <p class="price">Rs. 260/kg</p>
+        <p>Classic aromatic variety from Lucknow with medium size and fiberless flesh. Distinctive sweet flavor with hints of citrus. Ideal for chutneys and aamras.</p>
+        <a href="https://wa.me/9233177739774?text=I%20want%20to%20order%20Dussehri%20mangoes" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Chitta Chaunsa -->
+    <div class="product">
+      <img src="images/chitta-chaunsa.jpg" alt="Chitta Chaunsa Mango">
+      <div class="product-content">
+        <h3>Chitta Chaunsa</h3>
+        <p class="price">Rs. 320/kg</p>
+        <p>The "White Chaunsa" - a rare variety with pale yellow skin and exceptionally sweet, creamy flesh. Known for its delicate fragrance and melt-in-mouth texture. Limited seasonal availability.</p>
+        <a href="https://wa.me/9233177739774?text=I%20want%20to%20order%20Chitta%20Chaunsa%20mangoes" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Kala Chaunsa -->
+    <div class="product">
+      <img src="images/kala-chaunsa.jpg" alt="Kala Chaunsa Mango">
+      <div class="product-content">
+        <h3>Kala Chaunsa</h3>
+        <p class="price">Rs. 350/kg</p>
+        <p>The premium "Black Chaunsa" with dark green skin that turns golden when ripe. Intensely sweet with rich, complex flavors. Considered the champagne of mangoes with very limited production.</p>
+        <a href="https://wa.me/9233177739774?text=I%20want%20to%20order%20Kala%20Chaunsa%20mangoes" class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT INFO -->
+  <div class="contact-info">
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-map-marker-alt"></i> Sangi Farm, Khanbela Jalalpur Pirwala, Multan, Punjab</p>
+    <p><i class="fas fa-phone"></i> <a href="tel:+9233177739774">+92 331 77739774</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:ahmde144th@gmail.com">ahmde144th@gmail.com</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/9233177739774" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Sangi Orchards. All rights reserved.</p>
+    <p>Contact: <a href="tel:+9233177739774">+92 331 77739774</a> | <a href="https://wa.me/9233177739774">WhatsApp</a></p>
+  </footer>
+</body>
+</html>
